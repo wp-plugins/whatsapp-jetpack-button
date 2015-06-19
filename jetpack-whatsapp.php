@@ -3,7 +3,7 @@
  * Plugin Name: WhatsApp Sharing Button for Jetpack
  * Plugin URI: http://wordpress.org/plugins/whatsapp-jetpack-button/
  * Description: Add WhatsApp button to Jetpack Sharing
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Valerio Souza
  * Author URI: http://www.valeriosouza.com.br
  * License: GPLv3 or later
@@ -26,7 +26,7 @@ if( version_compare( get_bloginfo('version'), '3.8', '<' ) ) {
 define( 'jetwhats__PLUGIN_DIR',  plugin_dir_path( __FILE__ ) );
 define( 'jetwhats__PLUGIN_URL',  plugin_dir_url( __FILE__ ) );
 define( 'jetwhats__PLUGIN_FILE', __FILE__ );
-define( 'jetwhats__VERSION',     '0.1.0' );
+define( 'jetwhats__VERSION',     '1.0.1' );
 
 add_action( 'init', array( 'Jetpack_Whatsapp_Pack', 'init' ) );
 
@@ -69,24 +69,23 @@ class Jetpack_Whatsapp_Pack {
 		if( !Jetpack::is_module_active('sharedaddy') ) {
 			return;
 		}
-		wp_enqueue_script( 'jetpack-whatsapp', jetwhats__PLUGIN_URL . 'count.js', array('jquery','sharing-js'), jetwhats__VERSION, true );
-		wp_enqueue_style( 'jetpack-whatsapp', jetwhats__PLUGIN_URL . 'style.css', array(), jetwhats__VERSION );
+		wp_enqueue_script( 'jetpack-whatsapp', jetwhats__PLUGIN_URL . 'assets/js/main.js', array('jquery','sharing-js'), jetwhats__VERSION, true );
+		wp_enqueue_style( 'jetpack-whatsapp', jetwhats__PLUGIN_URL . 'assets/css/style.css', array(), jetwhats__VERSION );
 	}
 
 	function admin_menu_assets( $hook ) {
 		if( $hook == 'settings_page_sharing' ) {
-			wp_enqueue_style( 'jetpack-whatsapp', jetwhats__PLUGIN_URL . 'style.css', array('sharing', 'sharing-admin'), jetwhats__VERSION );
+			wp_enqueue_style( 'jetpack-whatsapp', jetwhats__PLUGIN_URL . 'assets/css/style.css', array('sharing', 'sharing-admin'), jetwhats__VERSION );
 		}
 	}
 
 	function require_services() {
 		if( class_exists('Jetpack') ) {
-			require_once( jetwhats__PLUGIN_DIR . 'class.whatsapp-service.php' );
+			require_once( jetwhats__PLUGIN_DIR . 'includes/class.whatsapp-service.php' );
 		}
 	}
 
 	static function plugin_textdomain() {
-		//load_plugin_textdomain( 'jetpack-whatsapp', false, dirname( plugin_basename( jetwhats__PLUGIN_FILE ) ) . '/languages/' );
 		$locale = get_locale();
 
 		load_plugin_textdomain( 'jetpack-whatsapp', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
@@ -96,7 +95,7 @@ class Jetpack_Whatsapp_Pack {
 		if( plugin_basename( jetwhats__PLUGIN_FILE ) === $file ) {
 			$links[] = sprintf(
 				'<a href="%s">%s</a>',
-				esc_url('https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=P5QTGDB64SU8E&lc=US&item_name=WordPress%20Plugins&no_note=0&cn=Adicionar%20instru%c3%a7%c3%b5es%20especiais%20para%20o%20vendedor%3a&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted'),
+				esc_url('http://valeriosouza.com.br/en/donate/'),
 				__( 'Donate', 'jetpack-whatsapp' )
 			);
 		}
