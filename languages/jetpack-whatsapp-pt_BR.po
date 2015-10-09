@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WhatsApp Sharing Button for Jetpack\n"
-"POT-Creation-Date: 2015-10-03 14:34-0300\n"
-"PO-Revision-Date: 2015-10-04 23:10+0000\n"
+"POT-Creation-Date: 2015-10-05 21:35-0300\n"
+"PO-Revision-Date: 2015-10-06 00:43+0000\n"
 "Last-Translator: Valério Souza <valeriosza@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/valeriosouza/jetpack-whatsapp/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -39,18 +39,24 @@ msgid ""
 " plugin to work sharing with WhatsApp."
 msgstr "Jetpack não está ativado! Você deve instalar e ativar o plugin Jetpack para conseguir usar o compartilhamento do WhatsApp"
 
-#: ../jetpack-whatsapp.php:124
+#: ../jetpack-whatsapp.php:130
 msgid "Donate"
 msgstr "Doar"
 
-#: ../jetpack-whatsapp.php:135
+#: ../jetpack-whatsapp.php:141
 msgid "More add-ons"
 msgstr "Outros Add-ons"
 
-#: ../jetpack-whatsapp.php:149
-#, php-format
+#: ../jetpack-whatsapp.php:155
 msgid ""
-"Like the plugin to share the WhatsApp Sharing Button for Jetpack? Develop "
-"free plugins takes work! Be my boss and make a <a target=\"_blank\" "
-"href=\"%1$s\">donation of any amount</a>. | <a href=\"%2$s\">Hide Notice</a>"
-msgstr "Gostou do plugin WhatsApp Sharing Button for Jetpack? Desenvolver plugins gratuitos dá trabalho! Seja meu chefe e <a target=\"_blank\" href=\"%1$s\">faça uma doação de qualquer valor</a>. | <a href=\"%2$s\">Esconder Aviso</a>"
+"Like the plugin WhatsApp Sharing Button for Jetpack? Develop free plugins "
+"takes work! Be my boss and make a "
+msgstr "Gosta do plugin WhatsApp Sharing Button para Jetpack? Desenvolver plugins gratuitos dá trabalho! Seja meu chefe e "
+
+#: ../jetpack-whatsapp.php:155
+msgid "donation of any amount"
+msgstr "faça uma doação de qualquer valor"
+
+#: ../jetpack-whatsapp.php:155
+msgid "This plugin does not deserve a donation"
+msgstr "Esse plugin não merece uma doação."
